@@ -1,33 +1,83 @@
 # My music
+## OUtline
+You can record music album you listened. 
 
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
-
-"hoge"が何かを簡潔に紹介する
-
-# DEMO
-
+## DEMO
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
-# Features
+## Technology Stack
+frontend : React
+backend : Django
+database : PostgreSQL
 
-"hoge"のセールスポイントや差別化などを説明する
+## Requirement
+### frontend
 
-# Requirement
+
+### backend
 
 "hoge"を動かすのに必要なライブラリなどを列挙する
 
 * huga 3.5.2
 * hogehuga 1.0.2
 
-# Installation
+## Installation
+Here are some steps to run this project locally.
 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+Project Setup
+Clone the Repository
+Use the following command to clone the repository locally:
+
+bash
+Copy the Code
+git clone https://github.com/your-username/myapp-frontend.git
+
+Create a Virtual Environment
+Create and activate a virtual environment:
+
+bash
+Copy the Code
+python -m venv venv
+
+### Windows
+venv\Scripts\activate
+### macOS/Linux
+source venv/bin/activate
+
+### frontend
+Run npm install or yarn install to install dependent packages.
+
+bash
+Copy code
+npm install or yarn install
+
+### backend
+Install dependencies
+Use requirements.txt to install required packages.
+bash
+Copy code
+pip install -r requirements.tx
 
 ```bash
 pip install huga_package
 ```
 
-# Usage
+## Usage
+### frontend
+Starting a development server
+To start your application in development mode, use the following command: 
+By default, the app starts at http://localhost:5173.
+
+bash
+npm run dev or yarn dev
+
+### backend
+Starting a development server
+Start the server in development mode:
+
+bash
+python manage.py runserver
+By default, the app starts at http://localhost:8000.
 
 DEMOの実行方法など、"hoge"の基本的な使い方を説明する
 
@@ -37,23 +87,19 @@ cd examples
 python demo.py
 ```
 
-# Note
+
+## Note
 
 注意点などがあれば書く
 
-# Author
+## Project Structure
+ディレクトリ構造
 
-作成情報を列挙する
+## Interface
+写真
 
-* 作成者
-* 所属
-* E-mail
+## Author
+* email : smith0smithy@gmail.com
 
 # License
-ライセンスを明示する
-
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
+This project is licensed under the MIT License
