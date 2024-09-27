@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+}
+
+a:link,
+a:visited {
+  color: rgba(0, 100, 255, 0.8);
+}
+a:hover {
+  color: aqua;
+}
+a:active {
+  color: yellow;
+}
+
+input,
+textarea,
+button,
+select {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+}
+textarea {
+  text-align: left;
+}
+
+input:focus:invalid {
+  background-color: rgb(253, 162, 178);
+}
+input:focus:valid {
+  background-color: aquamarine;
+}
+button {
+  color: yellow;
+  background-color: rgba(0, 10, 100, 0.5);
+  height: 40px;
+  width: 120px;
+  border: 1px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+button:hover {
+  font-weight: bold;
+}
+
+/* signup, login */
+h1 {
+  text-align: center;
+  font-family: serif;
+  font-style: italic;
+  font-size: 80px;
+}
+.h2title {
+  font-size: 25px;
+}
+.userbox {
+  text-align: center;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.userbox input {
+  position: relative;
+  width: 400px;
+}
+.logbutton {
+  position: absolute;
+  bottom: -250%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loglink {
+  position: absolute;
+  bottom: -265%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

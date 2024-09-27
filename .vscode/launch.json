@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MyappBackend1Application",
+      "request": "launch",
+      "mainClass": "com.example.hello.MyappBackend1Application",
+      "projectName": "myapp_backend-1"
+    },
+    {
+      "type": "java",
+      "name": "HelloApplication",
+      "request": "launch",
+      "mainClass": "com.example.hello.HelloApplication",
+      "projectName": "myapp_backend-1"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DemoApplication<myapp-backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.myapp_backend.DemoApplication",
+      "projectName": "myapp-backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
