@@ -5,32 +5,32 @@ This app was built using :[My music](https://mymusic03.com).　　<br>
 
 
 ## Technology Stack
-*frontend : React　<br>　
-*backend : Django　　<br>
-*database : PostgreSQL　<br>　
+* frontend : React　<br>
+* backend : Django　　<br>
+* database : PostgreSQL　<br>　
 
 
 ## Features
-*View and delete account lists with admin account　　<br>
-*Create, log in, and log out of accounts　　<br>
-*Search for music albums using the Spotify API and add them to your library　　<br>
-*Manage listening dates, ratings, notes, and links within your library　　<br>
-*Display, search, sort, edit, and delete library entries　　<br>
-*Edit account information in the settings　　<br>
+* View and delete account lists with admin account　　<br>
+* Create, log in, and log out of accounts　　<br>
+* Search for music albums using the Spotify API and add them to your library　　<br>
+* Manage listening dates, ratings, notes, and links within your library　　<br>
+* Display, search, sort, edit, and delete library entries　　<br>
+* Edit account information in the settings　　<br>
 
 
 ## Requirement
 ### frontend
 #### dependencies
-*React: version 18.3.1　　<br>
-*React DOM: version 18.3.1　　<br>
-*React Router DOM: version 6.26.1  <br>
-*Axios: version 1.7.5　　<br>
-*Sass: version 1.79.1　　<br>
-*Vite: version 5.4.1　　<br>
-*ESLint: version 9.9.0　　<br>
-*@vitejs/plugin-react: version 4.3.1　　<br>
-*eslint-plugin-react: version 7.35.0　　<br>
+* React: version 18.3.1　　<br>
+* React DOM: version 18.3.1　　<br>
+* React Router DOM: version 6.26.1  <br>
+* Axios: version 1.7.5　　<br>
+* Sass: version 1.79.1　　<br>
+* Vite: version 5.4.1　　<br>
+* ESLint: version 9.9.0　　<br>
+* @vitejs/plugin-react: version 4.3.1　　<br>
+* eslint-plugin-react: version 7.35.0　　<br>
 
 ### Environment variables
 Create .env and write environment variables there according to the execution environment　　<br>
@@ -40,11 +40,11 @@ VITE_API_URL='YOUR_API_URL' #'http://localhost:8000' is recommended　　
 
 ### backend
 #### dependencies
-*Django: version 5.1　　<br>
-*django_restf_ramework: version 3.14　　<br>
-*psycopg2: Django database adapter for PostgreSQL　　<br>
-*corsheaders: Django middleware for CORS　　<br>
-*Other dependencies :show requirements.txt　　<br>
+* Django: version 5.1　　<br>
+* django_restf_ramework: version 3.14　　<br>
+* psycopg2: Django database adapter for PostgreSQL　　<br>
+* corsheaders: Django middleware for CORS　　<br>
+* Other dependencies :show requirements.txt　　<br>
 
 #### Environment variables
 Create .env and write environment variables there according to the execution environment　　<br>
@@ -53,7 +53,7 @@ Needs spotify API　　<br>
 SUPERUSER = "YOUR_EMAIL_ADDRESS"
 #debug
 DEBUG = True
-DEBUG_LEVEL='YOUR_DEBUG_LEVEL' # 'DEBUG' is recommended
+DEBUG_LEVEL='YOUR_DEBUG_LEVEL' #'DEBUG' is recommended
 CONSOLE_LEVEL = 'YOUR_CONSOLE_LEVEL' #'DEBUH' is recommended
 
 #postgreSQL
