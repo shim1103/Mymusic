@@ -1,51 +1,54 @@
 # My music
 ## Outline
-You can record music album you listened. 　
-This app was built using :[My music](https://mymusic03.com).　　
+You can record music album you listened. 　<br>
+This app was built using :[My music](https://mymusic03.com).　　<br>
+
 
 ## Technology Stack
-*frontend : React　　
-*backend : Django　　
-*database : PostgreSQL　　
+*frontend : React　<br>　
+*backend : Django　　<br>
+*database : PostgreSQL　<br>　
+
 
 ## Features
-*View and delete account lists with admin account　　
-*Create, log in, and log out of accounts　　
-*Search for music albums using the Spotify API and add them to your library　　
-*Manage listening dates, ratings, notes, and links within your library　　
-*Display, search, sort, edit, and delete library entries　　
-*Edit account information in the settings　　
+*View and delete account lists with admin account　　<br>
+*Create, log in, and log out of accounts　　<br>
+*Search for music albums using the Spotify API and add them to your library　　<br>
+*Manage listening dates, ratings, notes, and links within your library　　<br>
+*Display, search, sort, edit, and delete library entries　　<br>
+*Edit account information in the settings　　<br>
+
 
 ## Requirement
 ### frontend
 #### dependencies
-*React: version 18.3.1　　
-*React DOM: version 18.3.1　　
-*React Router DOM: version 6.26.1　　
-*Axios: version 1.7.5　　
-*Sass: version 1.79.1　　
-*Vite: version 5.4.1　　
-*ESLint: version 9.9.0　　
-*@vitejs/plugin-react: version 4.3.1　　
-*eslint-plugin-react: version 7.35.0　　
+*React: version 18.3.1　　<br>
+*React DOM: version 18.3.1　　<br>
+*React Router DOM: version 6.26.1  <br>
+*Axios: version 1.7.5　　<br>
+*Sass: version 1.79.1　　<br>
+*Vite: version 5.4.1　　<br>
+*ESLint: version 9.9.0　　<br>
+*@vitejs/plugin-react: version 4.3.1　　<br>
+*eslint-plugin-react: version 7.35.0　　<br>
 
 ### Environment variables
-Create .env and write environment variables there according to the execution environment　　
+Create .env and write environment variables there according to the execution environment　　<br>
 ```
 VITE_API_URL='YOUR_API_URL' #'http://localhost:8000' is recommended　　
 ```
 
 ### backend
 #### dependencies
-*Django: version 5.1　　
-*django_restf_ramework: version 3.14　　
-*psycopg2: Django database adapter for PostgreSQL　　
-*corsheaders: Django middleware for CORS　　
-*Other dependencies :show requirements.txt　　
+*Django: version 5.1　　<br>
+*django_restf_ramework: version 3.14　　<br>
+*psycopg2: Django database adapter for PostgreSQL　　<br>
+*corsheaders: Django middleware for CORS　　<br>
+*Other dependencies :show requirements.txt　　<br>
 
 #### Environment variables
-Create .env and write environment variables there according to the execution environment　　
-Needs spotify API　　
+Create .env and write environment variables there according to the execution environment　　<br>
+Needs spotify API　　<br>
 ```
 SUPERUSER = "YOUR_EMAIL_ADDRESS"
 #debug
@@ -76,40 +79,47 @@ CORS_ALLOWED_CREDENTIALS='CORS_ALLOWED_CREDENTIALS' # 'True' is recommended
 CORS_ALLOWED_HEADERS='CORS_ALLOWED_HEADERS' # 'content-type,accept,x-requested-with,Authorization' is recommended
 ```
 
-## Installation
-Here are some steps to run this project locally.　　
 
-Project Setup　　
-Clone the Repository　　
-Use the following command to clone the repository locally:　　
-git clone https://github.com/your-username/myapp-frontend.git　　
+## Installation
+Here are some steps to run this project locally.　　<br>
+
+Project Setup　　<br>
+Clone the Repository　　<br>
+Use the following command to clone the repository locally:　　<br>
+git clone https://github.com/your-username/myapp-frontend.git　　<br>
 
 ### frontend
 Run ```npm install``` or ```yarn install``` to install dependent packages.　　
 
 ### backend
-Run ```pip install -r requirements.tx ```　　
-Run ```python manage.py makemigrations```　　
-Run ```python manage.py migrate```　　
+Run ```pip install -r requirements.tx ```　　<br>
+Run ```python manage.py makemigrations```　　<br>
+Run ```python manage.py migrate```　　<br>
+
 
 ## Usage
 ### frontend
-Starting a development server　　
-By default, the app starts at http://localhost:5173.　　
-Run ```npm run dev``` or ```yarn dev```　　
+Starting a development server　　<br>
+By default, the app starts at http://localhost:5173.　　<br>
+Run ```npm run dev``` or ```yarn dev```　　<br>
 
 ### backend
-Starting a development server　　
-By default, the app starts at http://localhost:8000.　　
-Run ```python manage.py runserver```　　
+Starting a development server　　<br>
+By default, the app starts at http://localhost:8000.　　<br>
+Run ```python manage.py runserver```　　<br>
+
 
 ## Note
+
+
 
 ## Interface
 写真
 
+
 ## Author
 * email : smith0smithy@gmail.com　　
+
 
 # License
 This project is licensed under the MIT License　　
