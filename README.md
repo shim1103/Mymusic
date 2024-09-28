@@ -1,7 +1,7 @@
 # My music
 ## Outline
 You can record music album you listened. 　<br>
-This app was built using :[My music](https://mymusic03.com).　　<br>
+This app was built using :[My music](https://mymusic03.com).<br>
 
 
 ## Technology Stack
@@ -32,7 +32,7 @@ This app was built using :[My music](https://mymusic03.com).　　<br>
 * @vitejs/plugin-react: version 4.3.1　　<br>
 * eslint-plugin-react: version 7.35.0　　<br>
 
-### Environment variables
+#### Environment variables
 Create .env and write environment variables there according to the execution environment　　<br>
 ```
 VITE_API_URL='YOUR_API_URL' #'http://localhost:8000' is recommended　　
@@ -44,7 +44,7 @@ VITE_API_URL='YOUR_API_URL' #'http://localhost:8000' is recommended　　
 * django_restf_ramework: version 3.14　　<br>
 * psycopg2: Django database adapter for PostgreSQL　　<br>
 * corsheaders: Django middleware for CORS　　<br>
-* Other dependencies :show requirements.txt　　<br>
+* Other dependencies :show requirements.txt<br>
 
 #### Environment variables
 Create .env and write environment variables there according to the execution environment　　<br>
@@ -86,7 +86,7 @@ Here are some steps to run this project locally.　　<br>
 Project Setup　　<br>
 Clone the Repository　　<br>
 Use the following command to clone the repository locally:　　<br>
-git clone https://github.com/your-username/myapp-frontend.git　　<br>
+git clone https://github.com/your-username/myapp-frontend.git<br>
 
 ### frontend
 Run ```npm install``` or ```yarn install``` to install dependent packages.　　
@@ -100,17 +100,13 @@ Run ```python manage.py migrate```　　<br>
 ## Usage
 ### frontend
 Starting a development server　　<br>
-By default, the app starts at http://localhost:5173.　　<br>
+By default, the app starts at http://localhost:5173.<br>
 Run ```npm run dev``` or ```yarn dev```　　<br>
 
 ### backend
 Starting a development server　　<br>
-By default, the app starts at http://localhost:8000.　　<br>
+By default, the app starts at http://localhost:8000.<br>
 Run ```python manage.py runserver```　　<br>
-
-
-## Note
-
 
 
 ## Interface
@@ -118,7 +114,7 @@ Run ```python manage.py runserver```　　<br>
 
 
 ## Author
-* email : smith0smithy@gmail.com　　
+* email : smith0smithy@gmail.com
 
 
 # License
