@@ -1,7 +1,7 @@
 # My music
 ## Outline
 You can record music album you listened. 　<br>
-This app was built using :[My music](https://mymusic03.com).<br>
+This app was built using :[My music](http://mymusic03.com).<br>
 
 
 ## Technology Stack
@@ -107,10 +107,6 @@ Run ```npm run dev``` or ```yarn dev```　　<br>
 Starting a development server　　<br>
 By default, the app starts at http://localhost:8000.<br>
 Run ```python manage.py runserver```　　<br>
-
-
-## Interface
-写真
 
 
 ## Author
