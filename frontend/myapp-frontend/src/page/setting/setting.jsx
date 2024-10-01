@@ -5,14 +5,14 @@ import axios from "axios";
 import useComplete from "../alert/useComplete";
 import { apiUrl } from "../const";
 
-//user accoun setting
+//user account setting
 function Setting(){
     //input completion ON
     const location = useLocation();
     const autoCompleteValue = location.pathname === '/signup' ? 'off' : 'on';
 
     const {auth} =useAuth();
-    const {showCompleteContent, renderDialogsComplete} = useComplete();
+    const completeDialog = useComplete();
 
     useEffect(()=>{
         console.log(auth);
@@ -51,11 +51,12 @@ function Setting(){
                 ...prevData,
                 password : passNow
             }))
+            completeDialog.showCompleteContent('認証されました')
             console.log('Authorized!')
         })
         .then(()=> setPassNow(null))
         .catch(error =>{
-            console.log('Error verifying password!', error.response? error.response.data : error.message);
+            console.error('Error verifying password!',  error.response || error.message);
         })
 
     }
@@ -74,12 +75,12 @@ function Setting(){
                 console.log('Updating user setting !');
                 setEdit(!edit);
                 setVerify(!verify);
-                setUserData(firstData);
+                setUserData({username: userData.username, tell :userData.tell, password:null,});
                 return;
             })
-            .then(()=> showCompleteContent())
+            .then(()=> completeDialog.showCompleteContent())
             .catch(error =>{
-                console.log('Error updating user setting!', error.response || error.message);
+                console.error('Error updating user setting!', error.response || error.message);
             })
     };
 
@@ -132,7 +133,7 @@ function Setting(){
                                     }}/>
                                 </td>
                                 <td>
-                                    <button type="button" onClick={handleVerify}>確認</button>
+                                    <button type="button" onClick={handleVerify}>認証</button>
                                 </td>
                                 </>)}
                                 {(edit && verify) &&<td colSpan={2}>
@@ -158,7 +159,7 @@ function Setting(){
                         </tbody>
                     </table>
                 </div>
-                {renderDialogsComplete()}
+                {completeDialog.renderDialogsComplete()}
             </form>
         </>
     )

@@ -32,7 +32,7 @@ function Users(){
                 setLists(arrayedUsers);
                 setLoading(false);
             })
-            .catch(error => console.log('Error fetching data:', error))
+            .catch(error => console.error('Error fetching data:', error))
     } , [auth.username]);
 
     //delete user account
@@ -51,7 +51,7 @@ function Users(){
                 .then(()=>window.location.reload())
             })
             .catch(error =>{
-                console.log('Error deleting account! ',error.response? error.response.data : error.message)
+                console.error('Error deleting account! ',error.response || error.message)
             })
     })}
 

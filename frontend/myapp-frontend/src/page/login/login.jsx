@@ -43,7 +43,7 @@ function Login() {
                 .then(()=>nav('/'))
             })
             .catch (error=> {
-            console.log('Error logging in', error.response || error.message);
+            console.error('Error logging in', error.response || error.message);
         })
     }
 

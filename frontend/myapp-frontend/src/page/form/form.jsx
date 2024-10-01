@@ -46,7 +46,7 @@ function Form({lists,addAlbum,form, showForm}) {
         const fetchToken = async () => {
             try {
                 const access_token = await getAccessToken();
-                console.log('access_token:', access_token);
+                // console.log('access_token:', access_token);
                 setToken(access_token);
             } catch (error) {
                 console.error('Failed to fetch access token:', error);
@@ -57,7 +57,7 @@ function Form({lists,addAlbum,form, showForm}) {
 
     useEffect(() => {
         if (token) {
-            console.log('Get access_token successfully! :', token);
+            // console.log('Get access_token successfully! :', token);
         }
     }, [token]);
 
@@ -153,8 +153,8 @@ function Form({lists,addAlbum,form, showForm}) {
             console.log('Reset form!');
             showCompleteContent();
         }).catch(error=> {
-            console.log('Error adding music',
-                error.response ? error.response.data :error.message
+            console.error('Error adding music',
+                error.response || error.message
         )})
     };
 

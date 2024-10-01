@@ -164,6 +164,9 @@ table {
   width: 50px;
   height: auto;
 }
+.col-image {
+  width: 60px;
+}
 .col-is_fav {
   width: 50px;
 }

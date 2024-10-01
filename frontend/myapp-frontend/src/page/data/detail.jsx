@@ -75,7 +75,7 @@ function Detail({music,lists, deleteAlbum, updateAlbum, showDetail, toggleIs_fav
                 })
                 .then(()=>showCompleteContent())
                 .catch (error=> {
-                    console.log('Error updating music', error.response ? error.response.data : error.message);
+                    console.error('Error updating music', error.response || error.message);
                 });
                 
             })
@@ -111,7 +111,7 @@ function Detail({music,lists, deleteAlbum, updateAlbum, showDetail, toggleIs_fav
                     console.log('Delete successfully!', response.data);
                 })
                 .catch(error =>{
-                    console.log('Error deleting music' ,error.response ? error.response.data :error.message);
+                    console.error('Error deleting music' ,error.response || error.message);
                 })
             })
         .then(()=>{
@@ -119,7 +119,7 @@ function Detail({music,lists, deleteAlbum, updateAlbum, showDetail, toggleIs_fav
             deleteAlbum({album :firstMusic.album, artist :firstMusic.artist})
         })
         .catch(error=>{
-            console.log('Error :',error)
+            console.error('Error :',error)
         })
     };
 

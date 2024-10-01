@@ -13,10 +13,10 @@ const getAccessToken = async () => {
         });
 
         const access_token = response.data.access_token;
-        console.log('getAccessToken Response:', response);
+        // console.log('getAccessToken Response:', response);
         return access_token;
     } catch (error) {
-        console.error('Error refreshing token', error.response ? error.response.data : error.message);
+        console.error('Error refreshing token',  error.response || error.message);
         throw error;
     }
 };

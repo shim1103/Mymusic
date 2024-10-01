@@ -55,7 +55,7 @@ function SignUp() {
                 if(error.response.data.type == "UsernameExists"){
                     alert("既にユーザが存在します")
                 } 
-                console.log('Error signing up', error.response || error.message);
+                console.error('Error signing up', error.response || error.message);
             })
     };
 

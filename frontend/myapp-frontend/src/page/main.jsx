@@ -68,7 +68,7 @@ function Main(){
                 setFirstMusics(formattedData);
                 console.log(`detabase connected! \n response :`, data)
             })
-            .catch(error => console.log('Error fetching data:', error))
+            .catch(error => console.error('Error fetching data:', error))
             .finally(()=>{
                 setLoading(false);
             })
@@ -183,7 +183,7 @@ function Main(){
             console.log('Toggle is_fav successfully!', response.data);
         })
         .catch (error=> {
-            console.log('Error toggle is_fav', error.response ? error.response.data : error.message);
+            console.error('Error toggle is_fav',  error.response || error.message);
         })
     };
 

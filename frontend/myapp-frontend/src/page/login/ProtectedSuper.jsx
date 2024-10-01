@@ -21,7 +21,7 @@ export const ProtectedSuper = () => {
                 console.log(res);
             })
             .catch(error =>{
-                console.log('Error verifying superuser', error.response || error.message)
+                console.error('Error verifying superuser', error.response || error.message)
             })
     })
 

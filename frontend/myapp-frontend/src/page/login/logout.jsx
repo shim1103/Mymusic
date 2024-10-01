@@ -20,7 +20,7 @@ function Logout() {
                     console.log('logout successfully!')
                 })
                 .catch (error=> {
-                    console.error('Logout failed:', error.response ? error.response.data : error.message);
+                    console.error('Logout failed:', error.response || error.message);
                     alert('logout failed!')
                 })
             })
