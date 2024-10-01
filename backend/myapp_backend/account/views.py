@@ -22,22 +22,24 @@ class UserViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         logger.debug('Request data for create: %s', request.data)
         serializer = RegisterSerializer(data=request.data)
-
-        if CustomUser.objects.filter(username=request.data.get('username')).exists():
-            logger.warning('Username already exists: %s', request.data.get('username'))
-            return Response({ "type" :"UsernameExists","message": "Username already exists."}, status=status.HTTP_400_BAD_REQUEST)
-    
-        if serializer.is_valid():
-            user = serializer.save()
-            logger.info('User created: %s', user.username)
-            return Response({
-                "user": {
-                    "username": user.username,
-                    "tell": user.tell,
-                }
-            }, status=status.HTTP_201_CREATED)
-        logger.warning('Validation errors: %s', serializer.errors)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try :
+            if CustomUser.objects.filter(username=request.data.get('username')).exists():
+                logger.error('Username already exists: %s', request.data.get('username'))
+                return Response({ "type" :"UsernameExists","message": "Username already exists."}, status=status.HTTP_400_BAD_REQUEST)
+        
+            if serializer.is_valid():
+                user = serializer.save()
+                logger.debug('User created: %s', user.username)
+                return Response({
+                    "user": {
+                        "username": user.username,
+                        "tell": user.tell,
+                    }
+                }, status=status.HTTP_201_CREATED)
+            logger.error('Validation errors: %s', serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response({'error' : 'An excepted error occured','details' : str(e)} ,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     #superuser vefify
     @action(detail=False, methods=['post'], url_path='superuser')
@@ -46,6 +48,7 @@ class UserViewSet(viewsets.ModelViewSet):
         superuser = settings.SUPERUSER
         try :
             if not username or  not superuser :
+                logger.error('Not username : %s or superuser : %s',username , superuser )
                 return Response({
                     "error" : "No username or No superuser", "detail" : f"username : '{username}', superusr : '{superuser}'"
                 }, status=status.HTTP_400_BAD_REQUEST)
@@ -66,19 +69,24 @@ class UserViewSet(viewsets.ModelViewSet):
             password = request.data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                logger.info('User authenticated: %s', username)
+                logger.debug('User authenticated: %s', username)
                 return Response(UserSerializer(user).data, status=status.HTTP_200_OK)
-            logger.warning('Invalid credentials for username: %s', username)
-            return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+            logger.error('Invalid credentials for username: %s', username)
+            return Response({"detail": "Invalid credentials"}, status=status.HTTP_201_UNAUTHORIZED)
         except Exception as e :
                 return Response({'error' : 'An excepted error occured','details' : str(e)} ,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     # logout
     @action(detail=False, methods=['post'], url_path='logout')
     def logout_view(self, request):
-        logout(request)
-        logger.info('logout failed')
-        return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
+        try :
+            logout(request)
+            logger.debug('Logout successfully!')
+            return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+                logger.error('Logout failed')
+                return Response({'error' : 'An excepted error occured','details' : str(e)} ,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            
 
     # verify password
     @csrf_exempt

@@ -61,7 +61,7 @@ class RefreshTokenView(APIView):
             spotify_token.save()
 
             logger.info('Token refreshed successfully')
-            return access_token, token_expiry
+            return access_token, refresh_token, token_expiry
         else:
             response_data = response.json()
             logger.error('Failed to refresh token: %s', response_data)
@@ -81,16 +81,17 @@ class RefreshTokenView(APIView):
             return self.refresh_access_token(spotify_token)
         else:
             logger.info('Token is still valid')
-            return spotify_token.access_token, spotify_token.token_expiry
+            return spotify_token.access_token,spotify_token.refresh_token, spotify_token.token_expiry
 
     # return access_token from request
     def get(self, request):
         try:
             spotify_token = self.get_spotify_token()
-            access_token, token_expiry = self.handle_token(spotify_token)
+            access_token, refresh_token, token_expiry = self.handle_token(spotify_token)
 
             return Response({
                 'access_token': access_token,
+                'refresh_token' : refresh_token,
                 'token_expiry': token_expiry,
             })
 
