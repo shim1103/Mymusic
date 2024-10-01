@@ -1,7 +1,7 @@
 # My music
 ## Outline
 You can record music album you listened. 　<br>
-This app was built using :[My music](http://mymusic03.com).<br>
+This app was built using :[My music](http://mymusic03.com)<br>
 
 
 ## Technology Stack
@@ -100,17 +100,17 @@ Run ```python manage.py migrate```　　<br>
 ## Usage
 ### frontend
 Starting a development server　　<br>
-By default, the app starts at http://localhost:5173.<br>
+By default, the app starts at http://localhost:5173<br>
 Run ```npm run dev``` or ```yarn dev```　　<br>
 
 ### backend
 Starting a development server　　<br>
-By default, the app starts at http://localhost:8000.<br>
+By default, the app starts at http://localhost:8000<br>
 Run ```python manage.py runserver```　　<br>
 
 
 ## Author
-* email : smith0smithy@gmail.com
+* email : smith03smithy@gmail.com
 
 
 # License
