@@ -85,8 +85,6 @@ Here are some steps to run this project locally.　　<br>
 
 Project Setup　　<br>
 Clone the Repository　　<br>
-Use the following command to clone the repository locally:　　<br>
-git clone https://github.com/your-username/myapp-frontend.git<br>
 
 ### frontend
 Run ```npm install``` or ```yarn install``` to install dependent packages.　　
