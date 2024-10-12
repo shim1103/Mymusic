@@ -103,11 +103,11 @@ function Setting(){
                         <tbody className="tfoot">
                             <tr className="username">
                                 <td><label htmlFor="username" id="username">ユーザID（メールアドレス）</label></td>
-                                <td colSpan={2}>{auth.username}</td>
+                                <td colSpan={2}>{userData.username}</td>
                             </tr>
                             <tr className="tell">
                                 <td><label htmlFor="tell" id="tell">電話番号</label></td>
-                                <td colSpan={2}>{!edit ? auth.tell :
+                                <td colSpan={2}>{!edit ? userData.tell :
                                     <input type="tell" name="tell" className="tell" id="tell" 
                                     required minLength={10} maxLength={15} 
                                     title="ハイフンなしで正しい電話番号を入力してください。例:090********"
