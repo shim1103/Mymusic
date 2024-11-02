@@ -54,7 +54,7 @@ SUPERUSER = "YOUR_EMAIL_ADDRESS"
 #debug
 DEBUG = True
 DEBUG_LEVEL='YOUR_DEBUG_LEVEL' #'DEBUG' is recommended
-CONSOLE_LEVEL = 'YOUR_CONSOLE_LEVEL' #'DEBUH' is recommended
+CONSOLE_LEVEL = 'YOUR_CONSOLE_LEVEL' #'DEBUG' is recommended
 
 #postgreSQL
 DATABASE_NAME='YOUR_DATABASE_NAME'
@@ -111,5 +111,5 @@ Run ```python manage.py runserver```　　<br>
 * email : smith03smithy@gmail.com
 
 
-# License
+## License
 This project is licensed under the MIT License　　
