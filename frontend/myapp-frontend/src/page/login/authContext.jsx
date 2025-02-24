@@ -5,7 +5,7 @@ const AuthContext = createContext();
 // provide user's information
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
-    const [auth, setAuth] =  useState(() => {
+    const [auth, setAuth] = useState(() => {
         const savedAuth = localStorage.getItem('authToken');
         return savedAuth ? JSON.parse(savedAuth) : null;
     });
@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }) => {
         setAuth(userData);
         localStorage.setItem('authToken', JSON.stringify(userData));
         localStorage.setItem('username', userData.username)
-        localStorage.setItem('tell',userData.tell)
-        localStorage.setItem('password',userData.password)
+        localStorage.setItem('tell', userData.tell)
+        localStorage.setItem('password', userData.password)
         console.log('authToken :', userData);
     };
 

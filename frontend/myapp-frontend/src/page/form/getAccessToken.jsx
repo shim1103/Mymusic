@@ -16,7 +16,7 @@ const getAccessToken = async () => {
         // console.log('getAccessToken Response:', response);
         return access_token;
     } catch (error) {
-        console.error('Error refreshing token',  error.response || error.message);
+        console.error('Error refreshing token', error.response || error.message);
         throw error;
     }
 };
