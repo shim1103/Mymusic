@@ -9,9 +9,11 @@ a:link,
 a:visited {
   color: white;
 }
+
 a:hover {
   color: aqua;
 }
+
 a:active {
   color: yellow;
 }
@@ -30,6 +32,7 @@ select {
   background-color: rgba(255, 255, 255, 1);
   color: black;
 }
+
 textarea {
   text-align: left;
 }
@@ -37,9 +40,11 @@ textarea {
 input:focus:invalid {
   background-color: rgb(253, 162, 178);
 }
+
 input:focus:valid {
   background-color: aquamarine;
 }
+
 button {
   color: yellow;
   background-color: rgba(0, 10, 100, 0.5);
@@ -51,6 +56,7 @@ button {
   font-size: 16px;
   position: relative;
 }
+
 button:hover {
   font-weight: bold;
 }
@@ -62,9 +68,11 @@ h1 {
   font-style: italic;
   font-size: 80px;
 }
+
 .h2title {
   font-size: 25px;
 }
+
 .userbox {
   text-align: center;
   width: 400px;
@@ -74,16 +82,19 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .userbox input {
   position: relative;
   width: 400px;
 }
+
 .logbutton {
   position: absolute;
   bottom: -250%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .loglink {
   position: absolute;
   bottom: -265%;

@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -15,16 +16,19 @@ header {
   position: relative;
   background-color: rgba(10, 10, 50, 1);
 }
+
 @media (min-width: 800px) {
   .menu {
     gap: 10px;
     background-color: rgba(10, 10, 50, 1);
   }
+
   .list {
     display: flex;
     flex-direction: row;
   }
 }
+
 .list {
   list-style: none;
   margin: 0;
@@ -32,35 +36,43 @@ header {
   list-style: none;
   background-color: rgba(10, 10, 50, 1);
 }
+
 .menus {
   background-color: rgba(10, 10, 50, 1);
 }
+
 .title {
   font-family: serif;
   font-style: italic;
   font-size: 50px;
   background-color: rgba(10, 10, 50, 1);
 }
+
 .list a:hover {
   outline: none;
   background-color: rgba(255, 255, 0, 0.2);
 }
+
 li {
   background-color: rgba(10, 10, 50, 1);
 }
+
 .ul {
   padding: 0;
   margin: 0;
 }
+
 .link_button {
   margin: 10px;
   display: block;
   background-color: rgba(10, 10, 50, 1);
   border-radius: 0px;
 }
+
 .navbar-toggler {
   display: none;
 }
+
 @media (max-width: 800px) {
   .menu {
     display: none;
@@ -77,21 +89,25 @@ li {
     opacity: 0;
     transition: height 0.5s ease, opacity 0.5s ease;
   }
+
   .navbar-toggler {
     display: block;
     cursor: pointer;
     padding: 10px;
   }
+
   .menu.show {
     display: flex;
     padding: 5px 0px;
     height: auto;
     opacity: 1;
   }
+
   .link_button {
     margin: 10px 5px;
   }
 }
+
 .link_button .b {
   display: flex;
   justify-content: center;
@@ -108,13 +124,16 @@ li {
   padding: 0;
   margin: 0;
 }
+
 :root {
   --current-width: 0px;
 }
+
 .containers {
   width: 100%;
   overflow-x: auto;
 }
+
 table {
   width: 100%;
   margin: 0;
@@ -130,6 +149,7 @@ table {
   line-height: 1.2;
   display: table;
 }
+
 .table td button {
   color: white;
   background-color: black;
@@ -145,19 +165,23 @@ table {
   text-overflow: ellipsis;
   display: block;
 }
+
 .table td button:hover {
   font-weight: normal;
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
+
 .table tr {
   border: 1px solid white;
 }
+
 .table td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .table tbody .is_fav,
 .table tbody .image,
 .table tbody .album,
@@ -168,33 +192,37 @@ table {
   background-color: black;
   height: 100%;
 }
+
 .table tfoot .image img {
   width: 50px;
   height: auto;
 }
+
 .col-image {
   width: 50px;
 }
+
 .col-is_fav {
   width: 50px;
 }
+
 .col-release,
 .col-date {
   width: 160px;
 }
+
 .col-asset {
   width: 50px;
 }
+
 .table .album {
-  width: calc(
-    (var(--current-width) - 50px - 50px - 160px - 160px - 50px) / 5 * 3
-  );
+  width: calc((var(--current-width) - 50px - 50px - 160px - 160px - 50px) / 5 * 3);
 }
+
 .table .artist {
-  width: calc(
-    (var(--current-width) - 50px - 50px - 160px - 160px - 50px) / 5 * 2
-  );
+  width: calc((var(--current-width) - 50px - 50px - 160px - 160px - 50px) / 5 * 2);
 }
+
 .album-image {
   width: 100%;
   height: auto;
@@ -204,23 +232,28 @@ table {
 .col-key {
   width: 150px;
 }
+
 .col-value {
   overflow: hidden;
 }
+
 .col-item {
   width: 320px;
   overflow: hidden;
 }
+
 .image-big img {
   width: 280px;
   height: auto;
 }
+
 .detail {
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   text-align: center;
   display: table;
   table-layout: auto;
 }
+
 .detail td {
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   height: 40px;
@@ -229,23 +262,28 @@ table {
   box-sizing: border-box;
   vertical-align: middle;
 }
+
 .detail td .href {
   height: 40px;
   font-size: 16px;
 }
+
 .detail .memo {
   height: 105px;
   vertical-align: auto;
   margin: 0;
 }
+
 .detail #co_artist {
   margin: 0;
 }
+
 .detail td {
   padding: 0;
   box-sizing: border-box;
   position: relative;
 }
+
 .detail td input,
 .detail td textarea,
 .detail td select {
@@ -261,6 +299,7 @@ table {
 .form {
   border: 0;
 }
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -270,17 +309,20 @@ table {
   overflow: hidden;
   vertical-align: top;
 }
+
 .image-item {
   text-align: center;
   margin: 0;
   padding: 0;
 }
+
 .image-name {
   width: 30px;
   height: 3px;
   text-align: center;
   font-size: 8px;
 }
+
 .image-button {
   width: 30px;
   height: auto;
@@ -293,35 +335,45 @@ table {
   text-align: center;
   display: table;
 }
+
 .users tr {
   height: 40px;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
 }
+
 .users td {
   border: 1.5px solid rgba(255, 255, 255, 0.7);
 }
+
 .users .col-number {
   width: 10%;
   color: red;
 }
+
 .users .col-tell {
   width: 20%;
 }
+
 .users .col-password {
   width: 20%;
 }
+
 .users .col-delete {
   width: 15%;
 }
+
 .users tfoot td {
   height: 20px;
 }
+
 .super td {
   color: yellow;
 }
+
 .users td input {
   margin: 0;
 }
+
 .users .col-key {
   width: 25%;
 }

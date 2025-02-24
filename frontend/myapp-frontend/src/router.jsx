@@ -7,7 +7,7 @@ import Main from "./page/main"
 import Form from "./page/form/form";
 import Setting from "./page/setting/setting";
 import Logout from "./page/login/logout";
-import {ProtectedSuper} from './page/login/ProtectedSuper';
+import { ProtectedSuper } from './page/login/ProtectedSuper';
 import Users from "./page/login/users";
 import NotFoundPage from "./page/NotFoundPage";
 
@@ -23,24 +23,25 @@ const router = createBrowserRouter([
   {
     element: <ProtectedRoute />,
     children: [
-        {
-            path: "/",
-            element: <RouterApp />,
+      {
+        path: "/",
+        element: <RouterApp />,
+        children: [
+          { index: true, element: <Main /> },
+          { path: "logout", element: <Logout /> },
+          { path: "form", element: <Form /> },
+          { path: "setting", element: <Setting /> },
+          { path: "*", element: <NotFoundPage /> },
+          {
+            element: <ProtectedSuper />,
             children: [
-              { index: true, element: <Main /> },
-              { path: "logout", element: <Logout /> },
-              { path: "form", element: <Form /> },
-              { path: "setting", element: <Setting /> },
-              { path: "*", element: <NotFoundPage /> },
-              { element :<ProtectedSuper/>,
-                children:[
-                  { index: true,path :"users",element: <Users /> },
-                ],
-              }
-            ]
-        },
+              { index: true, path: "users", element: <Users /> },
+            ],
+          }
+        ]
+      },
     ]
-    }
+  }
 ]);
 
 export default router;

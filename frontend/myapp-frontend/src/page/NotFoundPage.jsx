@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 //Not any link page
-function NotFoundPage(){
-    const {'*': paths } = useParams();
-    const nav =useNavigate();
-    const handleClick =() => nav('/');
+function NotFoundPage() {
+    const { '*': paths } = useParams();
+    const nav = useNavigate();
+    const handleClick = () => nav('/');
 
-    return(
+    return (
         <>
             <p>存在しないページ「{paths}」</p>
             <button onClick={handleClick}>OK</button>
