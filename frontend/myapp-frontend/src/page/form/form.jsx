@@ -127,35 +127,38 @@ function Form({lists,addAlbum,form, showForm}) {
 
     //adding music
     const handleSubmit = async (e) => {
-        if(formValues.album || !formValues.artist){
-            console.log('album :', formValues.album, ', artist :', formValues.artist, ', is_fav :', formValues.is_fav);
-        }
-        const isExists = [...lists].some((m)=>m.album == formValues.album && m.artist == formValues.artist);
         e.preventDefault();
-        if(isExists){
-            alert('既に追加されています')
+        
+        if (!formValues.album || !formValues.artist) {
+            console.log('album :', formValues.album, ', artist :', formValues.artist, ', is_fav :', formValues.is_fav);
             return;
         }
-        console.log('送信するデータ', formValues);
-        axios.post(`${apiUrl}/api/music/user-music/${auth.username}/`, 
-            formValues, {
-            headers: {
-                'Content-Type': 'application/json',
-        }})
-        .then(response => {
-            console.log('Adding successfully! :',response.data);
+
+        const isExists = lists.some((m) => m.album === formValues.album && m.artist === formValues.artist);
+        
+        if (isExists) {
+            alert('既に追加されています');
             return;
-        }).then(()=>{
+        }
+
+        console.log('送信するデータ', formValues);
+
+        try {
+            const response = await axios.post(`${apiUrl}/api/music/user-music/${auth.username}/`, formValues, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            console.log('Adding successfully! :', response.data);
             addAlbum(formValues);
             setAlbumName('');
             setArtistName('');
             resetForm();
             console.log('Reset form!');
             showCompleteContent();
-        }).catch(error=> {
-            console.error('Error adding music',
-                error.response || error.message
-        )})
+        } catch (error) {
+            console.error('Error adding music', error.response || error.message);
+        }
     };
 
     return (

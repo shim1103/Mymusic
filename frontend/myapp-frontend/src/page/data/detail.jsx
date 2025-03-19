@@ -43,43 +43,39 @@ function Detail({music,lists, deleteAlbum, updateAlbum, showDetail, toggleIs_fav
     //updating music
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(!formValues.album || !formValues.artist){
-            console.log('album :', formValues.album, ', artist :', formValues.artist, ', is_fav :', formValues.is_fav);
-        }
-        if(formValues.artist != firstMusic.artist){
-            const isExists = [...lists].some((m)=>m.album == formValues.album && m.artist == formValues.artist);
-            if(isExists){
-                alert('既に追加されています')
-                return;
+        try {
+            if(!formValues.album || !formValues.artist){
+                console.log('album :', formValues.album, ', artist :', formValues.artist, ', is_fav :', formValues.is_fav);
             }
-        }
-        assetCheck()
-        .then(()=>{
+            if(formValues.artist != firstMusic.artist){
+                const isExists = [...lists].some((m)=>m.album == formValues.album && m.artist == formValues.artist);
+                if(isExists){
+                    alert('既に追加されています')
+                    return;
+                }
+            }
+            await assetCheck();
             const updateData ={
                 album: firstMusic.album,
                 artist: firstMusic.artist,
                 newdata: formValues,
             }
-            axios.patch(`${apiUrl}/api/music/user-music/${auth.username}/`,
+            const response = await axios.patch(`${apiUrl}/api/music/user-music/${auth.username}/`,
                 updateData,{
                     headers: {
                         'Content-Type': 'application/json'
                     }
-                })
-                .then(response =>{
-                    console.log('送信するデータ',updateData);
-                    setFirstMusic(formValues);
-                    updateAlbum(updateData);
-                    console.log('Update successfully', response.data);
-                    setEdit(false);
-                })
-                .then(()=>showCompleteContent())
-                .catch (error=> {
-                    console.error('Error updating music', error.response || error.message);
                 });
-                
-            })
-            };
+            console.log('送信するデータ',updateData);
+            setFirstMusic(formValues);
+            updateAlbum(updateData);
+            console.log('Update successfully', response.data);
+            setEdit(false);
+            await showCompleteContent();
+        } catch (error) {
+            console.error('Error updating music', error.response || error.message);
+        }
+    };
             
     const detail_ToggleIs_fav =(e)=>{
         toggleIs_fav(e);
@@ -94,33 +90,27 @@ function Detail({music,lists, deleteAlbum, updateAlbum, showDetail, toggleIs_fav
         }
 
     //deleting music
-    const handleDelete= () =>{
+    const handleDelete= async () =>{
         const deleteData ={
             album : firstMusic.album,
             artist : firstMusic.artist,
         }
-        showAlertDialog(()=>{
-            console.log('送信するデータ' ,deleteData)
-            axios.delete(`${apiUrl}/api/music/user-music/${auth.username}/`,{
-                data : deleteData},{
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response =>{
-                    console.log('Delete successfully!', response.data);
-                })
-                .catch(error =>{
-                    console.error('Error deleting music' ,error.response || error.message);
-                })
-            })
-        .then(()=>{
+        try {
+            await showAlertDialog(async () => {
+                console.log('送信するデータ' ,deleteData)
+                const response = await axios.delete(`${apiUrl}/api/music/user-music/${auth.username}/`,{
+                    data : deleteData},{
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                console.log('Delete successfully!', response.data);
+            });
             console.log('Delete on clientside successfully!')
-            deleteAlbum({album :firstMusic.album, artist :firstMusic.artist})
-        })
-        .catch(error=>{
-            console.error('Error :',error)
-        })
+            deleteAlbum({album :firstMusic.album, artist :firstMusic.artist});
+        } catch (error) {
+            console.error('Error deleting music' ,error.response || error.message);
+        }
     };
 
 
