@@ -108,7 +108,7 @@ Run ```python manage.py runserver```　　<br>
 
 
 ## Author
-* email : smith03smithy@gmail.com
+* email : shim1103thy@gmail.com
 
 
 ## License
