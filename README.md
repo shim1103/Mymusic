@@ -1,7 +1,6 @@
 # My music
 ## Outline
 You can record music album you listened. 　<br>
-This app was built using : http://mymusic03.com<br>
 
 
 ## Technology Stack
